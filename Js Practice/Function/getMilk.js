@@ -8,8 +8,7 @@ function getMilk(money) {
     console.log("moveUp");
     console.log("moveRight");
     console.log("move Right");
-    var divMoney = money / 1.5;
-    console.log("buy " + Math.floor(divMoney) + " bottles of milk");
+    console.log("buy " + Math.floor(money / 1.5) + " bottles of milk");
     console.log("moveLeft");
     console.log("moveLeft");
     console.log("moveDown");
