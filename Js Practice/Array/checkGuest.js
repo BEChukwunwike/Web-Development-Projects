@@ -6,4 +6,5 @@ function checkGuest(name){
         return ("Sorry, you are not on my guest list, maybe next time.");
 }
 
-console.log(checkGuest("Angela"));
+let name = prompt("what is your name?");
+console.log(checkGuest(name));
