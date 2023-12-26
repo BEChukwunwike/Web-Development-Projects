@@ -5,3 +5,4 @@ function HouseKeeper(yearsofExperience, name, cleaningRepertoire){
 }
 
 var houseKeeper1 = new HouseKeeper(12, "Jane", ["bathroom", "lobby", "bedroom"]);
+console.log(houseKeeper1);
