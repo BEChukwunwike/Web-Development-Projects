@@ -18,12 +18,15 @@ inquirer
         // Use user feedback for... whatever!!
         let qrCode = qr.image(answers.url, { type: 'png' });
 
-        const fileName = ''
+        const fileName = 'input.txt';
+        const filePath = `${__dirname}/${fileName}`;
+        fs.writeFileSync(filePath, `URL entered: ${answers.url}`);
+        console.log(`QR Code has been saved in "${fileName}"`);
     })
     .catch((error) => {
     if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
+        Prompt could not be rendered in the current environment
     } else {
-      // Something else went wrong
+        Something else went wrong
     }
   });
