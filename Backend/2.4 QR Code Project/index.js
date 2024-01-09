@@ -8,25 +8,21 @@ import qr from 'qr-image';
 import fs from 'fs';
 
 inquirer
-    .prompt([
-        {
-            type: 'input',
-            message: 'Enter the URL:',
-        }
-    ])
-    .then((answers) => {
-        // Use user feedback for... whatever!!
-        let qrCode = qr.image(answers.url, { type: 'png' });
-
-        const fileName = 'input.txt';
-        const filePath = `${__dirname}/${fileName}`;
-        fs.writeFileSync(filePath, `URL entered: ${answers.url}`);
-        console.log(`QR Code has been saved in "${fileName}"`);
-    })
-    .catch((error) => {
+  .prompt([
+    {
+        message: "Type in your URL: ",
+        name: "URL",
+    }
+    /* Pass your questions in here */
+  ])
+  .then((answers) => {
+    // Use user feedback for... whatever!!
+    const url = answers.URL;
+  })
+  .catch((error) => {
     if (error.isTtyError) {
-        Prompt could not be rendered in the current environment
+      // Prompt couldn't be rendered in the current environment
     } else {
-        Something else went wrong
+      // Something else went wrong
     }
   });

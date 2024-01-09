@@ -21,9 +21,9 @@ inquirer
   })
   .catch((error) => {
     if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
+      console.error("Prompt couldn't be rendered in the current environment");
     } else {
-      // Something else went wrong
+      console.error("Something else went wrong");
     }
   });
 /* 
