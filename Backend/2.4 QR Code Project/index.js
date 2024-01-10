@@ -19,7 +19,7 @@ inquirer
     // Use user feedback for... whatever!!
     const url = answers.URL;
     const qrCode = qr.image(url, {type: 'png'});
-    qrCode.pipe(fs.createWriteStream('./qrCode.png'));
+    qrCode.pipe(fs.createWriteStream('qrCode.png'));
     fs.writeFile('URL.txt', url, (err) => {
       if (err) throw err;
       console.log('The file has been saved!');
