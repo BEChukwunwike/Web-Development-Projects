@@ -18,11 +18,17 @@ inquirer
   .then((answers) => {
     // Use user feedback for... whatever!!
     const url = answers.URL;
+    const qrCode = qr.image(url, {type: 'png'});
+    qrCode.pipe(fs.createWriteStream('./qrCode.png'));
+    fs.writeFile('URL.txt', url, (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+    });
   })
   .catch((error) => {
     if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
+      console.error("Prompt couldn't be rendered in the current environment");
     } else {
-      // Something else went wrong
+      console.error("Something else went wrong");
     }
   });
