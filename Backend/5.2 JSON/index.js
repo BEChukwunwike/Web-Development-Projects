@@ -12,13 +12,28 @@ const recipeJSON =
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let tacosInfo;
+
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", { recipe: tacosInfo});
 });
 
 app.post("/recipe", (req, res) => {
   //Step 3: Write your code here to make this behave like the solution website.
-  //Step 4: Add code to views/index.ejs to use the recieved recipe object.
+  switch(req.body.choice) {
+    case "chicken":
+      tacosInfo = JSON.parse(recipeJSON)[0];
+      break;
+    case "beef":
+      tacosInfo = JSON.parse(recipeJSON)[1];
+      break;
+    case "fish":
+      tacosInfo = JSON.parse(recipeJSON)[2];
+      break;
+    default:
+      break;
+  }
+  res.redirect("/");
 });
 
 app.listen(port, () => {
