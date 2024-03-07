@@ -26,7 +26,7 @@ if (time < 12) {
 }
 
 ReactDOM.render(
-    <h1 style= {{color: {color}}}>
+    <h1 style= {{ color: color }}>
         {greeting}
     </h1>,
     document.getElementById("root")
