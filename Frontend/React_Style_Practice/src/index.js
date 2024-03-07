@@ -9,24 +9,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-let time = new Date.getHours();
-let greeating = ""
+let date = new Date();
+let time = date.getHours();
+let greeting = ""
 let color = ""
 
 if (time < 12) {
-    greeating = "Good Morning"
+    greeting = "Good Morning"
     color = "red"
 } else if (time >= 12 && time < 18) {
-    greeating = "Good Afternoon"
+    greeting = "Good Afternoon"
     color = "green"
 } else {
-    greeating = "Good Evening"
+    greeting = "Good Evening"
     color = "blue"
 }
 
 ReactDOM.render(
-    <h1>
-        {greeating}
+    <h1 style= {{color: {color}}}>
+        {greeting}
     </h1>,
     document.getElementById("root")
 );
